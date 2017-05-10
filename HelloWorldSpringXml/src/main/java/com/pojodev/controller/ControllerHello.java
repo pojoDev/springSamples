@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pojodev.dto.UserRegisterForm;
@@ -12,6 +13,12 @@ import com.pojodev.dto.UserRegisterForm;
 @Controller
 public class ControllerHello {
 
+	@RequestMapping(value="/helloString")
+	@ResponseBody
+	public String helloString() {
+		return "Hello to my world";
+	}
+	
 	@RequestMapping(value="/hello")
 	public String hello(Model model) {
 		
